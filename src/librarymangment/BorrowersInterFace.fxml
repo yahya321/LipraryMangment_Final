@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="737.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.BoorrowersInterFaceController">
+   <children>
+      <VBox prefHeight="541.0" prefWidth="737.0">
+         <children>
+            <HBox prefHeight="505.0" prefWidth="737.0">
+               <children>
+                  <TableView fx:id="tvBorrower" prefHeight="485.0" prefWidth="527.0">
+                     <columns>
+                        <TableColumn fx:id="tcID" prefWidth="34.0" text="ID" />
+                        <TableColumn fx:id="tcFName" prefWidth="77.0" text="First Name" />
+                        <TableColumn fx:id="tcLName" prefWidth="82.0" text="Last Name" />
+                        <TableColumn fx:id="tcMobile" prefWidth="86.0" text="Mobile" />
+                        <TableColumn fx:id="tcEmail" prefWidth="101.0" text="Email" />
+                        <TableColumn fx:id="tcAddress" prefWidth="82.0" text="Address" />
+                        <TableColumn fx:id="tcGender" prefWidth="47.0" text="Gender" />
+                     </columns>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="449.0" prefWidth="225.0">
+                     <children>
+                        <Label text="First Name">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfFName" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Last Name">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfLName" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Mobile">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfMobile" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Email">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfEmail" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Address">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfAddress" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Gender">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <ChoiceBox fx:id="cbGender" prefWidth="150.0">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </ChoiceBox>
+                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="RESET FIELDS">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <font>
+                              <Font name="Bowlby One SC Regular" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#e12020" />
+                                    <Stop color="#900d0d" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" prefHeight="68.0" prefWidth="741.0">
+         <children>
+            <Button fx:id="buttonShowBorrowers" mnemonicParsing="false" onAction="#buttonShowBorrowersHandle" text="SHOW BORROWERS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="Bowlby One SC Regular" size="12.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#e12020" />
+                        <Stop color="#900d0d" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonADDBorrowers" mnemonicParsing="false" onAction="#buttonADDBorrowersHandle" text="ADD BORROWER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="Bowlby One SC Regular" size="12.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#e12020" />
+                        <Stop color="#900d0d" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonEditBorrowers" mnemonicParsing="false" onAction="#buttonEditBorrowersHandle" text="EDIT BORROWER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="Bowlby One SC Regular" size="12.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#e12020" />
+                        <Stop color="#900d0d" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="buttonDelBorrowers" mnemonicParsing="false" onAction="#buttonDelBorrowersHandle" text="Delete BORROWER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font name="Bowlby One SC Regular" size="12.0" />
+               </font>
+               <textFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#e12020" />
+                        <Stop color="#900d0d" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </textFill>
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</FlowPane>

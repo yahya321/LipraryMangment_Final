@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="722.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.BooksInterFaceController">
+   <children>
+      <VBox prefHeight="474.0" prefWidth="715.0">
+         <children>
+            <HBox prefHeight="482.0" prefWidth="715.0">
+               <children>
+                  <TableView fx:id="tvBooks" prefHeight="369.0" prefWidth="524.0">
+                    <columns>
+                      <TableColumn fx:id="tcID" prefWidth="61.0" text="ID" />
+                      <TableColumn fx:id="tcName" prefWidth="148.0" text="Name" />
+                        <TableColumn fx:id="tcDescription" prefWidth="207.0" text="Description" />
+                    </columns>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="389.0" prefWidth="386.0">
+                     <children>
+                        <Label text="NAME">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfName" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Description">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfDescription" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="30.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="RESET FIELDS">
+                           <font>
+                              <Font name="Bowlby One SC Regular" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#e12020" />
+                                    <Stop color="#900d0d" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="178.0" prefWidth="715.0">
+               <children>
+                  <Button fx:id="buttonShowBook" mnemonicParsing="false" onAction="#buttonShowBookHandle" text="SHOW BOOKS">
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button fx:id="buttonADDBook" mnemonicParsing="false" onAction="#buttonADDBookHandle" text="ADD BOOK">
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonEditBook" mnemonicParsing="false" onAction="#buttonEditBookHandle" text="EDIT BOOK">
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="buttonDelBook" mnemonicParsing="false" onAction="#buttonDelBookHandle" text="Delete Book">
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="471.0" prefWidth="722.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.BorrowerBooksInterFaceController">
+   <children>
+      <VBox prefHeight="474.0" prefWidth="715.0">
+         <children>
+            <HBox prefHeight="482.0" prefWidth="715.0">
+               <children>
+                  <TableView fx:id="tvBorrowerBook" prefHeight="369.0" prefWidth="524.0">
+                     <columns>
+                        <TableColumn fx:id="tcID" prefWidth="31.0" text="ID" />
+                        <TableColumn fx:id="tcBookID" prefWidth="63.0" text="Book ID" />
+                        <TableColumn fx:id="tcBorrowerID" prefWidth="77.0" text="Borrower ID" />
+                        <TableColumn fx:id="tcBorrowingDate" prefWidth="121.0" text="Borrowing Date" />
+                        <TableColumn fx:id="tcBookReturndeDate" prefWidth="124.0" text="Book Returned Date" />
+                     </columns>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </TableView>
+                  <VBox alignment="CENTER" prefHeight="389.0" prefWidth="386.0">
+                     <children>
+                        <Label text="Book ID">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfBookID" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label text="Borrower ID">
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextField fx:id="tfBorrowerID" alignment="CENTER">
+                           <VBox.margin>
+                              <Insets bottom="30.0" left="40.0" right="40.0" top="10.0" />
+                           </VBox.margin>
+                        </TextField>
+                        <Label>
+                           <font>
+                              <Font name="Cambria Bold" size="13.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="#f80000" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="RESET FIELDS">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <Glow />
+                           </effect>
+                           <font>
+                              <Font name="Bowlby One SC Regular" size="12.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                 <stops>
+                                    <Stop color="#e12020" />
+                                    <Stop color="#900d0d" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="178.0" prefWidth="715.0">
+               <children>
+                  <Button fx:id="buttonShow" mnemonicParsing="false" onAction="#buttonShowHandle" text="SHOW ">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="buttonDelete" mnemonicParsing="false" onAction="#buttonDeleteHandle" text="Delete">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Button>
+                  <Button fx:id="buttonADDBorrowerBook" mnemonicParsing="false" onAction="#buttonADDBorrowerBookHandle" text="ADD Borrower Book">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="buttonReturnBorroBook" mnemonicParsing="false" onAction="#buttonReturnBorroBookHandle" text="Return Borrower Book">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <Glow />
+                     </effect>
+                     <font>
+                        <Font name="Bowlby One SC Regular" size="12.0" />
+                     </font>
+                     <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#e12020" />
+                              <Stop color="#900d0d" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>

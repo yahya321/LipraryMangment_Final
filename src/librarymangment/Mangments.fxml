@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(&quot;1.png&quot;);" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.MangmentsController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="359.0" prefWidth="289.0" stylesheets="@../style1.css">
+         <children>
+            <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../2.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="buttonBooksMan" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonBooksManHandle" prefHeight="39.0" prefWidth="319.0" style="-fx-background-color: #D2691E;" stylesheets="@../mangments.css" text="BOOKS MANGMENT ">
+               <font>
+                  <Font name="Bungee Inline" size="14.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="0.9952380952380953">
+                     <stops>
+                        <Stop color="#1c7000" />
+                        <Stop color="#070611" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="buttonBorrowersMan" mnemonicParsing="false" onAction="#buttonBorrowersManHandle" prefHeight="41.0" prefWidth="294.0" style="-fx-background-color: #D2691E;" text="borrowers MANGMENT ">
+               <font>
+                  <Font name="Bungee Inline" size="14.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#4eb6fc" />
+                        <Stop color="BLACK" offset="0.007662835249042145" />
+                        <Stop color="#228a00" offset="0.9923371647509578" />
+                        <Stop color="#228a00" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buttonBorrBookMan" mnemonicParsing="false" onAction="#buttonBorrBookManHandle" prefHeight="41.0" prefWidth="292.0" style="-fx-background-color: #D2691E;" text="borrowers BOOKS MANGMENT ">
+               <font>
+                  <Font name="Bungee Inline" size="14.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0" startX="1.0">
+                     <stops>
+                        <Stop color="#11971a" />
+                        <Stop color="#052c0b" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <effect>
+                  <DropShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</FlowPane>
