@@ -26,6 +26,8 @@ import javax.persistence.OneToOne;
 @NamedQueries({
     @NamedQuery(name = "borrower_books.findAll",
             query = "Select b From borrower_books b"),
+    @NamedQuery(name = "borrower_books.findBookunReturned",
+            query = "Select b From borrower_books b where b.book_id = :bookid and b.return_date is Null ")
 //                query = "Select bo.name as book_name,concat(bb.first_name,' ',bb.last_name) as borrower_name , b.* From borrower_books b join Books bo on bo.id = b.book_id join Borrowers bb on bb.id = b.borrower_id"),
 
 })

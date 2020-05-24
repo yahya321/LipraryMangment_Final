@@ -116,15 +116,16 @@ public class BorrowerBooksInterFaceController implements Initializable {
        EntityManager em = emf.createEntityManager();
         int bookid = Integer.parseInt(tfBookID.getText());
         int borrowerid = Integer.parseInt(tfBorrowerID.getText());
+        List<borrower_books> borrowerbooks1 = em.createNamedQuery("borrower_books.findBookunReturned").setParameter("bookid", bookid).getResultList();
 
-        
+        if(borrowerbooks1.isEmpty()){
         try{
             
             Books books = (Books)em.createNamedQuery("Books.findBook").setParameter("id", bookid).getSingleResult();
             Borrowers Borrower = (Borrowers)em.createNamedQuery("Borrowers.findBorrower").setParameter("id", borrowerid).getSingleResult();
             borrower_booksJpaController borrowerbooks = new borrower_booksJpaController(this.emf); 
-            borrower_books borrowerbooks1 = new  borrower_books(bookid,borrowerid,new Timestamp(date.getTime()));
-            borrowerbooks.create(borrowerbooks1);
+            borrower_books borrowerbooks2 = new  borrower_books(bookid,borrowerid,new Timestamp(date.getTime()));
+            borrowerbooks.create(borrowerbooks2);
             
             RefreshTextFields();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -138,7 +139,13 @@ public class BorrowerBooksInterFaceController implements Initializable {
             alert.setTitle("Error Retrieving");
             alert.setContentText("Please Enter Valid Book ID and Borrower ID");
             alert.showAndWait();
-                    
+        }          
+        }else {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Error Retrieving");
+        alert.setContentText(" Please Enter Non-borrowed book Or Returned Book ID ");
+        alert.showAndWait();
+        
         }
          
       
