@@ -127,11 +127,9 @@ public class BoorrowersInterFaceController implements Initializable {
             borrowers.setGender(1);}
         BorrowersJpaController bojpcon = new BorrowersJpaController(this.emf);
         bojpcon.create(borrowers);
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("The item was Added");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
         RefreshTable();
+        User_Ulog.addToLog(" Added Book name { "+borrowers.getFirst_name()+" } in"+ " borrowers " +"On ");
 
         
     }
@@ -152,11 +150,9 @@ public class BoorrowersInterFaceController implements Initializable {
        BorrowersJpaController bojpcon = new BorrowersJpaController(this.emf);
        bojpcon.edit(borrowers);
        RefreshTextFields();
-       Alert alert = new Alert(Alert.AlertType.INFORMATION);
-       alert.setTitle("Done");
-       alert.setContentText("The item was Edited");
-       alert.showAndWait();
+       User_Ulog.myAlert("Operation Complete", "The item was Edited",1);
        RefreshTable();
+       User_Ulog.addToLog(" Edited borrower with ID { "+this.id +" } in"+ " borrowers " +"On ");
 
 
     }
@@ -166,12 +162,13 @@ public class BoorrowersInterFaceController implements Initializable {
         BorrowersJpaController bojpcon = new BorrowersJpaController(this.emf); 
         bojpcon.destroy(id);
         RefreshTextFields();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("the Item was Deleted");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "TThe item was Deleted",1);
         RefreshTable();
+        User_Ulog.addToLog(" Deleted  borrower with ID { "+ this.id+" } From"+ " borrowers " +"On ");
     }
+    
+    
+    
      private void showSelectedBorrower(){
         Borrowers borrowers = tvBorrower.getSelectionModel().getSelectedItem();
         if(borrowers != null){
@@ -190,6 +187,9 @@ public class BoorrowersInterFaceController implements Initializable {
 
         }
      }
+     
+     
+     
      private void resetControls(){
         
         tfFName.setText("");

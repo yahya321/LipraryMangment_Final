@@ -30,7 +30,7 @@ public  class LibraryApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         
-        Ulog.stage=primaryStage;
+        User_Ulog.stage=primaryStage;
         Pane userPane = FXMLLoader.load(getClass().getResource("LoginInterFace.fxml"));
         Pane mangmentsPane = FXMLLoader.load(getClass().getResource("Mangments.fxml"));
         
@@ -38,21 +38,21 @@ public  class LibraryApp extends Application {
         mapPanes.put("MangmentsPane",mangmentsPane);
         
       
-        if(Ulog.isUserLogin){
+        if(User_Ulog.isUserLogin){
             
-             Scene scene = new Scene(mapPanes.get("MangmentsPane"));
-        Ulog.stage.setTitle("User MangmentsPane");
-        Ulog.stage.setScene(scene);
-        Ulog.stage.show();
+        Scene scene = new Scene(mapPanes.get("MangmentsPane"));
+        User_Ulog.stage.setTitle("User MangmentsPane");
+        User_Ulog.stage.setScene(scene);
+        User_Ulog.stage.show();
         
         
            
         
         }else{
        Scene scene = new Scene(mapPanes.get("UserPane"));
-            Ulog.stage.setTitle("User Login");
-            Ulog.stage.setScene(scene);
-            Ulog.stage.show();
+            User_Ulog.stage.setTitle("User Login");
+            User_Ulog.stage.setScene(scene);
+            User_Ulog.stage.show();
         }
         
      

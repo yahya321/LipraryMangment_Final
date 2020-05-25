@@ -16,10 +16,13 @@
    <children>
       <VBox alignment="CENTER" prefHeight="359.0" prefWidth="289.0" stylesheets="@../style1.css">
          <children>
-            <ImageView fitHeight="225.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="190.0" fitWidth="199.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../2.png" />
+                  <Image url="@../3.png" />
                </image>
+               <VBox.margin>
+                  <Insets bottom="30.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
             </ImageView>
             <Button fx:id="buttonBooksMan" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#buttonBooksManHandle" prefHeight="39.0" prefWidth="319.0" style="-fx-background-color: #D2691E;" stylesheets="@../mangments.css" text="BOOKS MANGMENT ">
                <font>

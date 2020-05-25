@@ -67,26 +67,28 @@ public void init (LibraryApp control){
         users = (Users) em.createNamedQuery("Users.findId")
                 .setParameter("name",tfUserName.getText())
                 .getSingleResult();
-        if ( users.getPassword().equals(tffPassword.getText() ) ){
-           
-        Ulog.addToLog("User \""+users.getName()+"\" has been login");
+        if ( users.getPassword().equals(tffPassword.getText() ) ){       
         Scene scene = new Scene(FXMLLoader.load(getClass().getResource("Mangments.fxml")));
-        Ulog.stage.setTitle("Mangments Options");
-        Ulog.stage.setScene(scene);
-        
+        User_Ulog.stage.setTitle("Mangments Options");
+        User_Ulog.stage.setScene(scene);
+        User_Ulog.login_user = tfUserName.getText();
+        User_Ulog.addToLog(" Logined On ");
+
         }else{
-          JOptionPane.showMessageDialog(null, "rong pass");
+          
+          User_Ulog.myAlert("Entry failed", "Rong Password",0);
+
          }
         
         }catch(NoResultException ex){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error Retrieving");
-            alert.setContentText("No records found");
-            alert.showAndWait();
+            
+            User_Ulog.myAlert("Entry failed", "Rong User name",0);
         }
-         
+        
         em.close();
     }
+    
+     
     
     }
     

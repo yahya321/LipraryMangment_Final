@@ -103,11 +103,9 @@ public class BorrowerBooksInterFaceController implements Initializable {
        borrowerbooks.destroy(this.id);
         
        RefreshTextFields();
-       Alert alert = new Alert(Alert.AlertType.INFORMATION);
-       alert.setTitle("Done");
-       alert.setContentText("The Item was Deleted");
-       alert.showAndWait();
+       User_Ulog.myAlert("Operation Complete", "The item was Deleted",1);
        RefreshTable();
+       User_Ulog.addToLog(" Deleted  Borrower book with ID { "+ this.id+" } From"+ " borrower_books " +"On ");
        
     }
 
@@ -128,23 +126,15 @@ public class BorrowerBooksInterFaceController implements Initializable {
             borrowerbooks.create(borrowerbooks2);
             
             RefreshTextFields();
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Done");
-            alert.setContentText("The Item was Added");
-            alert.showAndWait();
+            User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
             RefreshTable();
+            User_Ulog.addToLog(" Added Book name { "+books.getName()+" } To Borrower name { "+Borrower.getFirst_name()+"} in"+ " borrower_books " +"On ");
             
         }catch(javax.persistence.NoResultException e){
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setTitle("Error Retrieving");
-            alert.setContentText("Please Enter Valid Book ID and Borrower ID");
-            alert.showAndWait();
+            User_Ulog.myAlert("Error", "Please Enter Valid Book ID and Borrower ID",0);
         }          
         }else {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("Error Retrieving");
-        alert.setContentText(" Please Enter Non-borrowed book Or Returned Book ID ");
-        alert.showAndWait();
+            User_Ulog.myAlert("Error", "Please Enter Non-borrowed book Or Returned Book ID",0);
         
         }
          
@@ -164,11 +154,10 @@ public class BorrowerBooksInterFaceController implements Initializable {
         borrowerbooks1.setReturn_date(new Timestamp(date.getTime()));
         borrowerbooks.edit(borrowerbooks1);
         RefreshTextFields();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("The Book was Returned to the liprary");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "The Book was Returned to the liprary",1);
         RefreshTable();
+        User_Ulog.addToLog(" Deleted book with ID { "+ this.id+" } has Returned in"+ " borrower_books " +"On ");
+        
               
     }
     

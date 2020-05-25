@@ -5,6 +5,9 @@
  */
 package librarymangment;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -21,6 +24,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
+import static librarymangment.User_Ulog.login_user;
+import static librarymangment.User_Ulog.timestamp;
 
 /**
  * FXML Controller class
@@ -85,7 +90,7 @@ public class BooksInterFaceController implements Initializable {
     }
 
     @FXML
-    private void buttonADDBookHandle(ActionEvent event) {
+    private void buttonADDBookHandle(ActionEvent event) throws FileNotFoundException {
         
         Books books = new Books();
         books.setName(tfName.getText());
@@ -96,11 +101,10 @@ public class BooksInterFaceController implements Initializable {
         em.getTransaction().commit();
         em.close();
         RefreshTextFields();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("the Item was Added");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
         RefreshTable();
+        User_Ulog.addToLog(" Added Book name { "+books.getName()+" } in"+ " books " +"On ");
+        
         
     }
 
@@ -114,11 +118,9 @@ public class BooksInterFaceController implements Initializable {
         BooksJpaController bookcontrol = new BooksJpaController(this.emf); 
         bookcontrol.edit(books);  
         RefreshTextFields();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("The item was Edited");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "The item was Edited",1);
         RefreshTable();
+        User_Ulog.addToLog(" Edited book with ID { "+this.id +" } in"+ " books " +"On ");
 
         
     }
@@ -129,11 +131,9 @@ public class BooksInterFaceController implements Initializable {
         BooksJpaController bookcontrol = new BooksJpaController(this.emf); 
         bookcontrol.destroy(this.id);
         RefreshTextFields();
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Done");
-        alert.setContentText("The item was Deleted");
-        alert.showAndWait();
+        User_Ulog.myAlert("Operation Complete", "TThe item was Deleted",1);
         RefreshTable();
+        User_Ulog.addToLog(" Deleted  book with ID { "+ this.id+" } From"+ " books " +"On ");
         
 
     }
