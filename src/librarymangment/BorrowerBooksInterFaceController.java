@@ -78,7 +78,7 @@ public class BorrowerBooksInterFaceController implements Initializable {
         tcBorrowingDate.setCellValueFactory(new PropertyValueFactory("borrowers_date"));
         tcBookReturndeDate.setCellValueFactory(new PropertyValueFactory("return_date"));
         tvBorrowerBook.getSelectionModel().selectedItemProperty().addListener(
-                event-> showSelectedBook() );
+                event-> showSelectedBorrowerBook() );
         this.emf = Persistence.createEntityManagerFactory("LibraryMangmentPU");
     }    
 
@@ -99,19 +99,24 @@ public class BorrowerBooksInterFaceController implements Initializable {
 
     @FXML
     private void buttonDeleteHandle(ActionEvent event) throws NonexistentEntityException {
+       EntityManager em = emf.createEntityManager();
+       List<borrower_books> listBorrowerbooks  = em.createNamedQuery("borrower_books.findBorrowerBook").setParameter("id", this.id).getResultList(); 
+       if(!listBorrowerbooks.isEmpty()){
        borrower_booksJpaController borrowerbooks = new borrower_booksJpaController(this.emf); 
-       borrowerbooks.destroy(this.id);
-        
+       borrowerbooks.destroy(this.id); 
        RefreshTextFields();
        User_Ulog.myAlert("Operation Complete", "The item was Deleted",1);
        RefreshTable();
        User_Ulog.addToLog(" Deleted  Borrower book with ID { "+ this.id+" } From"+ " borrower_books " +"On ");
-       
+        }else{
+          User_Ulog.myAlert("No Item Selected", "Please Select an item from the Table",0);
+        }
     }
 
     @FXML
     private void buttonADDBorrowerBookHandle(ActionEvent event) {
-       EntityManager em = emf.createEntityManager();
+        if(!tfBookID.getText().isEmpty() && !tfBorrowerID.getText().isEmpty()){
+        EntityManager em = emf.createEntityManager();
         int bookid = Integer.parseInt(tfBookID.getText());
         int borrowerid = Integer.parseInt(tfBorrowerID.getText());
         List<borrower_books> borrowerbooks1 = em.createNamedQuery("borrower_books.findBookunReturned").setParameter("bookid", bookid).getResultList();
@@ -137,12 +142,16 @@ public class BorrowerBooksInterFaceController implements Initializable {
             User_Ulog.myAlert("Error", "Please Enter Non-borrowed book Or Returned Book ID",0);
         
         }
+        }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);
+        }
          
       
     }
 
     @FXML
     private void buttonReturnBorroBookHandle(ActionEvent event) throws Exception {
+        if(!tfBookID.getText().isEmpty() && !tfBorrowerID.getText().isEmpty()){
         int bookid = Integer.parseInt(tfBookID.getText());
         int borrowerid = Integer.parseInt(tfBorrowerID.getText());
         borrower_booksJpaController borrowerbooks = new borrower_booksJpaController(this.emf); 
@@ -156,12 +165,14 @@ public class BorrowerBooksInterFaceController implements Initializable {
         RefreshTextFields();
         User_Ulog.myAlert("Operation Complete", "The Book was Returned to the liprary",1);
         RefreshTable();
-        User_Ulog.addToLog(" Deleted book with ID { "+ this.id+" } has Returned in"+ " borrower_books " +"On ");
-        
+        User_Ulog.addToLog(" Has Returned book with ID { "+ this.id+" }  in"+ " borrower_books " +"On ");
+        }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);
+        }
               
     }
     
-     private void showSelectedBook(){
+     private void showSelectedBorrowerBook(){
         borrower_books borrowerbooks = tvBorrowerBook.getSelectionModel().getSelectedItem();
         if(borrowerbooks != null){
         this.id = borrowerbooks.getId();

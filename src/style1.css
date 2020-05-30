@@ -8,15 +8,14 @@ and open the template in the editor.
     Author     : yahya
 */
 .button{
-    -fx-background-color: #ff7f50; 
+   -fx-background-color: #191970; 
    -fx-border-radius: 20px;
    -fx-background-radius: 20;
    -fx-padding: 5;
-   -fx-background-color:dimgray
 
 }
 .button:hover{
-  -fx-background-color:darkslategrey   
+  -fx-background-color:mistyrose   
 }
 .root {
     -fx-background-image: url("https://i.pinimg.com/564x/4c/2a/3d/4c2a3da80a29587bb695aedd8ebedfca.jpg");

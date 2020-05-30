@@ -115,6 +115,11 @@ public class BoorrowersInterFaceController implements Initializable {
 
     @FXML
     private void buttonADDBorrowersHandle(ActionEvent event) {
+        
+         if(!tfFName.getText().isEmpty() && !tfLName.getText().isEmpty()
+            && !tfMobile.getText().isEmpty()&& !tfEmail.getText().isEmpty()
+            && !tfAddress.getText().isEmpty()){
+             
         Borrowers borrowers = new Borrowers();
         borrowers.setFirst_name(tfFName.getText());
         borrowers.setLast_name(tfLName.getText());
@@ -129,13 +134,21 @@ public class BoorrowersInterFaceController implements Initializable {
         bojpcon.create(borrowers);
         User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
         RefreshTable();
-        User_Ulog.addToLog(" Added Book name { "+borrowers.getFirst_name()+" } in"+ " borrowers " +"On ");
-
+        User_Ulog.addToLog(" Added Borrower name { "+borrowers.getFirst_name()+" } in"+ " borrowers " +"On ");
+        
+        }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);      
+        }
         
     }
 
     @FXML
     private void buttonEditBorrowersHandle(ActionEvent event) throws Exception {
+        if(!tfFName.getText().isEmpty() && !tfLName.getText().isEmpty()
+            && !tfMobile.getText().isEmpty()&& !tfEmail.getText().isEmpty()
+            && !tfAddress.getText().isEmpty()){
+            
+        
        Borrowers borrowers = new Borrowers();
        borrowers.setId(id);
        borrowers.setFirst_name(tfFName.getText());
@@ -153,18 +166,26 @@ public class BoorrowersInterFaceController implements Initializable {
        User_Ulog.myAlert("Operation Complete", "The item was Edited",1);
        RefreshTable();
        User_Ulog.addToLog(" Edited borrower with ID { "+this.id +" } in"+ " borrowers " +"On ");
-
+        }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);      
+        }
 
     }
 
     @FXML
     private void buttonDelBorrowersHandle(ActionEvent event) throws NonexistentEntityException {
+        EntityManager em = emf.createEntityManager();
+        List<Borrowers> borrower = em.createNamedQuery("Borrowers.findBorrower").setParameter("id", this.id).getResultList();
+        if(!borrower.isEmpty()){
         BorrowersJpaController bojpcon = new BorrowersJpaController(this.emf); 
         bojpcon.destroy(id);
         RefreshTextFields();
-        User_Ulog.myAlert("Operation Complete", "TThe item was Deleted",1);
+        User_Ulog.myAlert("Operation Complete", "The item was Deleted",1);
         RefreshTable();
         User_Ulog.addToLog(" Deleted  borrower with ID { "+ this.id+" } From"+ " borrowers " +"On ");
+        }else{
+        User_Ulog.myAlert("No Item Selected", "Please Select an item from the Table",0);
+        }
     }
     
     
@@ -173,7 +194,6 @@ public class BoorrowersInterFaceController implements Initializable {
         Borrowers borrowers = tvBorrower.getSelectionModel().getSelectedItem();
         if(borrowers != null){
         id = borrowers.getId();
-       // tfID.setText(String.valueOf(borrowers.getId()));
         tfFName.setText(borrowers.getFirst_name());
         tfLName.setText(borrowers.getLast_name());
         tfMobile.setText(String.valueOf(borrowers.getMobile()));

@@ -22,6 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 import static librarymangment.User_Ulog.login_user;
@@ -91,7 +92,7 @@ public class BooksInterFaceController implements Initializable {
 
     @FXML
     private void buttonADDBookHandle(ActionEvent event) throws FileNotFoundException {
-        
+        if(!tfName.getText().isEmpty() && !tfDescription.getText().isEmpty()){
         Books books = new Books();
         books.setName(tfName.getText());
         books.setDescription(tfDescription.getText());
@@ -104,13 +105,15 @@ public class BooksInterFaceController implements Initializable {
         User_Ulog.myAlert("Operation Complete", "The Item was Added",1);
         RefreshTable();
         User_Ulog.addToLog(" Added Book name { "+books.getName()+" } in"+ " books " +"On ");
-        
+        }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);
+        }
         
     }
 
     @FXML
     private void buttonEditBookHandle(ActionEvent event) throws Exception {
-        
+       if(!tfName.getText().isEmpty() && !tfDescription.getText().isEmpty()){
         Books books = new Books();
         books.setId(this.id);
         books.setName(tfName.getText());
@@ -121,25 +124,29 @@ public class BooksInterFaceController implements Initializable {
         User_Ulog.myAlert("Operation Complete", "The item was Edited",1);
         RefreshTable();
         User_Ulog.addToLog(" Edited book with ID { "+this.id +" } in"+ " books " +"On ");
-
-        
+      }else{
+        User_Ulog.myAlert("Invalid values", "Please Enter Valid Values",0);
+       } 
     }
 
     @FXML
     private void buttonDelBookHandle(ActionEvent event) throws Exception {
-      
+         EntityManager em = emf.createEntityManager();
+         List<Books> bookss = em.createNamedQuery("Books.findBook").setParameter("id", this.id).getResultList();
+      if(!bookss.isEmpty()){
         BooksJpaController bookcontrol = new BooksJpaController(this.emf); 
         bookcontrol.destroy(this.id);
         RefreshTextFields();
         User_Ulog.myAlert("Operation Complete", "TThe item was Deleted",1);
         RefreshTable();
         User_Ulog.addToLog(" Deleted  book with ID { "+ this.id+" } From"+ " books " +"On ");
-        
+      }else{
+          User_Ulog.myAlert("No Item Selected", "Please Select an item from the Table",0);
+        }  
 
     }
     
     private void resetControls(){
-        tfID.setText("");
         tfName.setText("");
         tfDescription.setText("");
         tvBooks.getItems().clear();

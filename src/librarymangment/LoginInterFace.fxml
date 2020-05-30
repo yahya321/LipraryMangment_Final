@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
@@ -12,19 +13,19 @@
 
 <FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="288.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.LoginInterFaceController">
    <children>
-      <VBox alignment="CENTER" prefHeight="430.0" prefWidth="290.0">
+      <VBox alignment="CENTER" prefHeight="479.0" prefWidth="290.0">
          <children>
             <ImageView fitHeight="168.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../User_login_man_profile_account2.png" />
                </image>
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="30.0" />
                </VBox.margin>
             </ImageView>
             <Label text="User Name">
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Times New Roman Bold" size="14.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -42,7 +43,7 @@
             </TextField>
             <Label text="Password">
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Times New Roman Bold" size="14.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
@@ -55,24 +56,31 @@
             </Label>
             <PasswordField fx:id="tffPassword" alignment="CENTER">
                <VBox.margin>
-                  <Insets bottom="10.0" left="40.0" right="40.0" top="10.0" />
+                  <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
                </VBox.margin>
             </PasswordField>
-            <Button fx:id="buttonLogin" mnemonicParsing="false" onAction="#buttonLoginHandle" text="Login">
+            <Button fx:id="buttonLogin" alignment="CENTER" mnemonicParsing="false" onAction="#buttonLoginHandle" prefHeight="31.0" prefWidth="95.0" text="   LOGIN   " textAlignment="CENTER" textOverrun="LEADING_ELLIPSIS">
                <font>
-                  <Font name="Impact" size="16.0" />
+                  <Font name="Times New Roman Bold" size="16.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
-                        <Stop color="#d01212" />
-                        <Stop color="#8a2323" offset="1.0" />
+                        <Stop color="#ff7105" />
+                        <Stop color="#ff6d05" offset="0.40198285736856654" />
+                        <Stop color="#e40000" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
                <VBox.margin>
                   <Insets top="10.0" />
                </VBox.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Button>
          </children>
       </VBox>

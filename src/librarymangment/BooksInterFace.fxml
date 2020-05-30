@@ -64,15 +64,16 @@
                               <Insets bottom="30.0" left="40.0" right="40.0" top="10.0" />
                            </VBox.margin>
                         </TextField>
-                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="RESET FIELDS">
+                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="  RESET FIELDS  ">
                            <font>
-                              <Font name="Bowlby One SC Regular" size="12.0" />
+                              <Font name="Serif Bold" size="12.0" />
                            </font>
                            <textFill>
                               <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                                  <stops>
-                                    <Stop color="#e12020" />
-                                    <Stop color="#900d0d" offset="1.0" />
+                                    <Stop color="#ffaa00" />
+                                    <Stop color="#ffaa00" offset="0.48109965635738833" />
+                                    <Stop color="RED" offset="1.0" />
                                  </stops>
                               </RadialGradient>
                            </textFill>
@@ -89,15 +90,16 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="178.0" prefWidth="715.0">
                <children>
-                  <Button fx:id="buttonShowBook" mnemonicParsing="false" onAction="#buttonShowBookHandle" text="SHOW BOOKS">
+                  <Button fx:id="buttonShowBook" mnemonicParsing="false" onAction="#buttonShowBookHandle" text="  SHOW BOOKS  ">
                      <font>
-                        <Font name="Bowlby One SC Regular" size="12.0" />
+                        <Font name="Serif Bold" size="12.0" />
                      </font>
                      <textFill>
                         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                            <stops>
-                              <Stop color="#e12020" />
-                              <Stop color="#900d0d" offset="1.0" />
+                              <Stop color="#ff7b00" />
+                              <Stop color="#ff7700" offset="0.47766323024054985" />
+                              <Stop color="#ff0404" offset="1.0" />
                            </stops>
                         </RadialGradient>
                      </textFill>
@@ -110,15 +112,17 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button fx:id="buttonADDBook" mnemonicParsing="false" onAction="#buttonADDBookHandle" text="ADD BOOK">
+                  <Button fx:id="buttonADDBook" mnemonicParsing="false" onAction="#buttonADDBookHandle" text="  ADD BOOK  ">
                      <font>
-                        <Font name="Bowlby One SC Regular" size="12.0" />
+                        <Font name="Serif Bold" size="12.0" />
                      </font>
                      <textFill>
                         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                            <stops>
-                              <Stop color="#e12020" />
-                              <Stop color="#900d0d" offset="1.0" />
+                              <Stop color="#e09522" />
+                              <Stop color="#e09422" offset="0.5020342062645653" />
+                              <Stop color="#e09422" offset="0.5180708614764783" />
+                              <Stop color="RED" offset="1.0" />
                            </stops>
                         </RadialGradient>
                      </textFill>
@@ -132,15 +136,16 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonEditBook" mnemonicParsing="false" onAction="#buttonEditBookHandle" text="EDIT BOOK">
+                  <Button fx:id="buttonEditBook" mnemonicParsing="false" onAction="#buttonEditBookHandle" text="  EDIT BOOK  ">
                      <font>
-                        <Font name="Bowlby One SC Regular" size="12.0" />
+                        <Font name="Serif Bold" size="12.0" />
                      </font>
                      <textFill>
                         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                            <stops>
-                              <Stop color="#e12020" />
-                              <Stop color="#900d0d" offset="1.0" />
+                              <Stop color="#ffaa00" />
+                              <Stop color="#ffaa00" offset="0.4879725085910653" />
+                              <Stop color="RED" offset="1.0" />
                            </stops>
                         </RadialGradient>
                      </textFill>
@@ -154,15 +159,16 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="buttonDelBook" mnemonicParsing="false" onAction="#buttonDelBookHandle" text="Delete Book">
+                  <Button fx:id="buttonDelBook" mnemonicParsing="false" onAction="#buttonDelBookHandle" text="  DELETE BOOK  ">
                      <font>
-                        <Font name="Bowlby One SC Regular" size="12.0" />
+                        <Font name="Serif Bold" size="12.0" />
                      </font>
                      <textFill>
                         <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                            <stops>
-                              <Stop color="#e12020" />
-                              <Stop color="#900d0d" offset="1.0" />
+                              <Stop color="#ff9d00" />
+                              <Stop color="#ffa600" offset="0.5085910652920962" />
+                              <Stop color="RED" offset="1.0" />
                            </stops>
                         </RadialGradient>
                      </textFill>

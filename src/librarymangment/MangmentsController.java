@@ -73,7 +73,7 @@ public class MangmentsController implements Initializable {
      public void BorrowerBooks_STAGE(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("BorrowerBooksInterFace.fxml"));
         
-        stage.setTitle("Borrowers Mangment");
+        stage.setTitle("Borrowers Books Mangment");
         stage.setScene(new Scene(root));
         stage.show();
     }

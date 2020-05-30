@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="737.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.BoorrowersInterFaceController">
+<FlowPane alignment="CENTER" columnHalignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="628.0" prefWidth="909.0" stylesheets="@../style1.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="librarymangment.BoorrowersInterFaceController">
    <children>
       <VBox prefHeight="541.0" prefWidth="737.0">
          <children>
@@ -140,7 +140,7 @@
                               <Insets bottom="20.0" left="40.0" right="40.0" top="10.0" />
                            </VBox.margin>
                         </ChoiceBox>
-                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="RESET FIELDS">
+                        <Button fx:id="buttonResetField" mnemonicParsing="false" onAction="#buttonResetFieldHandle" text="  RESET FIELDS  ">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
@@ -148,13 +148,14 @@
                               <Glow />
                            </effect>
                            <font>
-                              <Font name="Bowlby One SC Regular" size="12.0" />
+                              <Font name="Serif Bold" size="12.0" />
                            </font>
                            <textFill>
                               <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                                  <stops>
-                                    <Stop color="#e12020" />
-                                    <Stop color="#900d0d" offset="1.0" />
+                                    <Stop color="#ffd400" />
+                                    <Stop color="#ffd400" offset="0.5051546391752577" />
+                                    <Stop color="RED" offset="1.0" />
                                  </stops>
                               </RadialGradient>
                            </textFill>
@@ -167,7 +168,7 @@
       </VBox>
       <HBox alignment="CENTER" prefHeight="68.0" prefWidth="741.0">
          <children>
-            <Button fx:id="buttonShowBorrowers" mnemonicParsing="false" onAction="#buttonShowBorrowersHandle" text="SHOW BORROWERS">
+            <Button fx:id="buttonShowBorrowers" mnemonicParsing="false" onAction="#buttonShowBorrowersHandle" text="  SHOW BORROWERS  ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -175,13 +176,14 @@
                   <Glow />
                </effect>
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Serif Bold" size="12.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
-                        <Stop color="#e12020" />
-                        <Stop color="#900d0d" offset="1.0" />
+                        <Stop color="#ff9900" />
+                        <Stop color="#ff9900" offset="0.513607457439665" />
+                        <Stop color="RED" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
@@ -189,7 +191,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="buttonADDBorrowers" mnemonicParsing="false" onAction="#buttonADDBorrowersHandle" text="ADD BORROWER">
+            <Button fx:id="buttonADDBorrowers" mnemonicParsing="false" onAction="#buttonADDBorrowersHandle" text="  ADD BORROWER  ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -197,13 +199,14 @@
                   <Glow />
                </effect>
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Serif Bold" size="12.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
-                        <Stop color="#e12020" />
-                        <Stop color="#900d0d" offset="1.0" />
+                        <Stop color="#ffb200" />
+                        <Stop color="#ffb200" offset="0.4707903780068729" />
+                        <Stop color="RED" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
@@ -211,7 +214,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="buttonEditBorrowers" mnemonicParsing="false" onAction="#buttonEditBorrowersHandle" text="EDIT BORROWER">
+            <Button fx:id="buttonEditBorrowers" mnemonicParsing="false" onAction="#buttonEditBorrowersHandle" text="  EDIT BORROWER  ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -219,13 +222,14 @@
                   <Glow />
                </effect>
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Serif Bold" size="12.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
-                        <Stop color="#e12020" />
-                        <Stop color="#900d0d" offset="1.0" />
+                        <Stop color="#ffb200" />
+                        <Stop color="#ffb200" offset="0.5051546391752577" />
+                        <Stop color="RED" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
@@ -233,7 +237,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="buttonDelBorrowers" mnemonicParsing="false" onAction="#buttonDelBorrowersHandle" text="Delete BORROWER">
+            <Button fx:id="buttonDelBorrowers" mnemonicParsing="false" onAction="#buttonDelBorrowersHandle" text="  DELETE BORROWER  ">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -241,13 +245,14 @@
                   <Glow />
                </effect>
                <font>
-                  <Font name="Bowlby One SC Regular" size="12.0" />
+                  <Font name="Serif Bold" size="12.0" />
                </font>
                <textFill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
-                        <Stop color="#e12020" />
-                        <Stop color="#900d0d" offset="1.0" />
+                        <Stop color="#ffaa00" />
+                        <Stop color="#ffbc00" offset="0.5085910652920962" />
+                        <Stop color="RED" offset="1.0" />
                      </stops>
                   </RadialGradient>
                </textFill>
